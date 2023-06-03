@@ -1,7 +1,5 @@
 package com.demo.travelcardsystem.controller;
 
-import com.demo.travelcardsystem.config.TravelcardsystemApplication;
-import com.demo.travelcardsystem.entity.Station;
 import com.demo.travelcardsystem.model.request.CardRegistrationRequest;
 import com.demo.travelcardsystem.model.request.SwipeRequest;
 import com.demo.travelcardsystem.model.response.TravelCardResponse;
@@ -10,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping(value = "/api/card")
@@ -23,11 +20,6 @@ public class TravellerController {
     @GetMapping(value = "/ping")
     public String pingMe() {
         return "Service is UP and Running";
-    }
-
-    @GetMapping(value = "/stations")
-    public Set<Station> getStations() {
-        return TravelcardsystemApplication.stations;
     }
 
     @PostMapping(value = "/register")

@@ -17,8 +17,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication(scanBasePackages = {"com.demo.travelcardsystem"})
 public class TravelcardsystemApplication{
 
-    public static Set<Station> stations;
-
     public static void main(String[] args) {
         SpringApplication.run(TravelcardsystemApplication.class, args);
     }
@@ -35,10 +33,9 @@ public class TravelcardsystemApplication{
        return travelStrategy.loadAllBusinessRules();
     }
 
-
     @Bean
     public Boolean loadAllStation(InMemoryCardTransactionRepository inMemoryCardTransactionRepository) {
-        stations = new HashSet<>();
+        Set<Station> stations = new HashSet<>();
 
         //ADD Algubaiba
         stations.add(new Station("Algubaiba", new HashSet<>(Arrays.asList(Zone.ONE))));
