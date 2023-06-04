@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * This class is used to create all the business rules for the system.
+ *
+ */
 @Data
 @Component
 @Scope("singleton")

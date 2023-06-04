@@ -94,7 +94,7 @@ class RechargeTravelCardTests extends IntegrationTest{
 
 
         //THEN -  exception should be thrown
-        assertEquals(errorMsg, "This card is Invalid. Please use a valid card");
+        assertEquals("This card is Invalid. Please use a valid card", errorMsg);
     }
 
     @DisplayName("Users are able to recharge the card successfully")

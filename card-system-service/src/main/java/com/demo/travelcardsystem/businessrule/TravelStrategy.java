@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+/*
+ * This class is used to create all the business rules for the system.
+ */
 @Data
 @Component
 @RequiredArgsConstructor
@@ -84,7 +87,9 @@ public class TravelStrategy {
 
 
     };
-
+/*
+ * This method is used to load all the business rules in the system.
+ */
     public RuleCollection loadAllBusinessRules() {
         anyWhereInZoneOneStrategy.accept(3.91);
         anyOneZoneOutsideZoneOneStrategy.accept(3.13);

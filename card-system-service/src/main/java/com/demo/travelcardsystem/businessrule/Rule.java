@@ -8,6 +8,10 @@ import lombok.Data;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * This class is used to create all the business rules for the system.
+ * 
+ */
 @Data
 public class Rule {
     private TransportType transportType;

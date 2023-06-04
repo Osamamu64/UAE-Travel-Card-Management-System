@@ -14,11 +14,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+/*
+ * This is the main class for the application.
+ * This class is annotated with @SpringBootApplication which is a convenience annotation that adds all of the following:
+ * @Configuration: Tags the class as a source of bean definitions for the application context.
+ * @EnableAutoConfiguration: Tells Spring Boot to start adding beans based on classpath settings, other beans, and various property settings.
+ * @ComponentScan: Tells Spring to look for other components, configurations, and services in the com/example package, letting it find the controllers.
+ * 
+ */
 @SpringBootApplication(scanBasePackages = {"com.demo.travelcardsystem"})
 public class TravelcardsystemApplication{
 
     public static Set<Station> stations;
 
+    
     public static void main(String[] args) {
         SpringApplication.run(TravelcardsystemApplication.class, args);
     }
@@ -35,7 +44,11 @@ public class TravelcardsystemApplication{
        return travelStrategy.loadAllBusinessRules();
     }
 
-
+/*
+ * This method is used to load all the stations in the system.
+ * This method is annotated with @Bean which tells Spring that a method annotated with 
+ * @Bean will return an object that should be registered as a bean in the Spring application context.
+ */
     @Bean
     public Boolean loadAllStation(InMemoryCardTransactionRepository inMemoryCardTransactionRepository) {
         stations = new HashSet<>();
@@ -52,6 +65,9 @@ public class TravelcardsystemApplication{
         return inMemoryCardTransactionRepository.addAllStationsToStationStore(stations);
     }
 
+    /*
+     * This method is used to load all the cards in the system.
+     */
     @Bean
     public Boolean loadInitialCards(InMemoryCardTransactionRepository inMemoryCardTransactionRepository) {
         TravelCard firstTravelCard = new TravelCard();
