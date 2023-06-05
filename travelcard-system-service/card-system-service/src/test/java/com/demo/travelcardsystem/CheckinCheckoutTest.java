@@ -1,12 +1,9 @@
 package com.demo.travelcardsystem;
 
 import com.demo.travelcardsystem.constant.TransportType;
-import com.demo.travelcardsystem.entity.Station;
 import com.demo.travelcardsystem.entity.TravelCard;
 import com.demo.travelcardsystem.model.request.SwipeRequest;
-import com.demo.travelcardsystem.model.response.TravelCardResponse;
 import com.demo.travelcardsystem.repository.InMemoryCardTransactionRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;

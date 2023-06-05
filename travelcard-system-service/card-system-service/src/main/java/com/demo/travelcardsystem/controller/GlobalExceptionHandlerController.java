@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandlerController {
 
     @ExceptionHandler({InvalidCardException.class, InvalidRechargeAmount.class})
-    public ResponseEntity handleInvalidRequestException(TravelCardException invalidCardException) {
-        ResponseEntity responseEntity = new ResponseEntity(invalidCardException.getMessage(), HttpStatus.NOT_ACCEPTABLE);
+    public <T> ResponseEntity<T> handleInvalidRequestException(TravelCardException invalidCardException) {
+        ResponseEntity<T> responseEntity = new ResponseEntity(invalidCardException.getMessage(), HttpStatus.NOT_ACCEPTABLE);
         invalidCardException.printStackTrace();
         return responseEntity;
     }
 
     @ExceptionHandler(InvalidDataProvidedException.class)
-    public ResponseEntity handleInvalidDataProvidedException(InvalidDataProvidedException invalidDataProvidedException) {
-        ResponseEntity responseEntity = new ResponseEntity("Invalid request! Please check input", HttpStatus.BAD_REQUEST);
+    public <T> ResponseEntity<T> handleInvalidDataProvidedException(InvalidDataProvidedException invalidDataProvidedException) {
+        ResponseEntity<T> responseEntity = new ResponseEntity("Invalid request! Please check input", HttpStatus.BAD_REQUEST);
         invalidDataProvidedException.printStackTrace();
         return responseEntity;
     }
